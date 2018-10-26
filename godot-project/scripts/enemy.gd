@@ -13,3 +13,7 @@ func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	position += Vector2(0.0, +1.0 * vertical_speed * delta)
+
+
+func _on_body_entered(body):
+	queue_free()
