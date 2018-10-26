@@ -6,6 +6,12 @@ extends RigidBody2D
 
 export (int) var impulse = 500;
 export (float) var movement_energy_cost = 0.5;
+export (int) var max_hp = 3
+
+onready var hp = max_hp
+
+signal hit
+
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -23,3 +29,7 @@ func _physics_process(delta):
 	if direction != 0.0 and $energy_bar.value >= movement_energy_cost:
 		apply_impulse(offset, Vector2(direction * impulse * delta, 0.0))
 		$energy_bar.value -= movement_energy_cost
+
+func damage():
+	hp -= 1
+	emit_signal("hit")

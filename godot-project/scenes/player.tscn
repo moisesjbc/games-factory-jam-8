@@ -34,6 +34,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 impulse = 500
 movement_energy_cost = 0.5
+max_hp = 3
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
