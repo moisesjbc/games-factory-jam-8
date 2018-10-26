@@ -11,6 +11,7 @@ export (int) var max_hp = 3
 onready var hp = max_hp
 
 signal hit
+signal died
 
 
 func _ready():
@@ -33,3 +34,5 @@ func _physics_process(delta):
 func damage():
 	hp -= 1
 	emit_signal("hit")
+	if hp == 0:
+		emit_signal("died")
