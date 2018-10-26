@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="godot-project"
-run/main_scene="res://player.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/height=768
 
 [rendering]
 
