@@ -11,6 +11,12 @@ var horizontal_speed = 0.0
 func _ready():
 	vertical_speed = random_speed(min_vertical_speed, max_vertical_speed)
 	horizontal_speed = random_speed(min_horizontal_speed, max_horizontal_speed)
+	
+	var paddle_random = randf()
+	if paddle_random < 0.75:
+		$right_paddle.queue_free()
+		if paddle_random < 0.50:
+			$left_paddle.queue_free()
 
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
@@ -24,3 +30,4 @@ func _on_body_entered(body):
 
 func random_speed(min_speed, max_speed):
 	return randf() * (max_speed - min_speed) + min_speed
+

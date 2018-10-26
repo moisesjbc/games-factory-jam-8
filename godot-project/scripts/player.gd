@@ -4,14 +4,17 @@ extends RigidBody2D
 # var a = 2
 # var b = "textvar"
 
-export (int) var impulse = 500;
-export (float) var movement_energy_cost = 0.5;
+export (int) var impulse = 500
+export (float) var movement_energy_cost = 0.5
+export (float) var enemy_recharge = 30.0
 export (int) var max_hp = 3
 
 onready var hp = max_hp
+onready var y = get_position().y
 
 signal hit
 signal died
+
 
 
 func _ready():
@@ -31,8 +34,12 @@ func _physics_process(delta):
 		apply_impulse(offset, Vector2(direction * impulse * delta, 0.0))
 		$energy_bar.value -= movement_energy_cost
 
+
 func damage():
 	hp -= 1
 	emit_signal("hit")
 	if hp == 0:
 		emit_signal("died")
+
+func recharge_energy():
+	$energy_bar.value += enemy_recharge
