@@ -109,6 +109,8 @@ color = Color( 0.630936, 0.838732, 0.902344, 1 )
 
 [node name="player" parent="." index="1" instance=ExtResource( 1 )]
 
+position = Vector2( 512.78, 692.751 )
+
 [node name="enemies_spawn" type="Position2D" parent="." index="2"]
 
 script = ExtResource( 2 )
