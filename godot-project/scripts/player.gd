@@ -36,6 +36,11 @@ func _physics_process(delta):
 
 
 func damage():
+	# Play hit sound
+	if not $hit_sound.playing:
+		$hit_sound.stop()
+	$hit_sound.play(1)
+	
 	hp -= 1
 	emit_signal("hit")
 	if hp == 0:

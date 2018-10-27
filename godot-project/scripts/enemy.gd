@@ -24,7 +24,7 @@ func _process(delta):
 	position += Vector2(horizontal_speed * delta, +1.0 * vertical_speed * delta)
 
 func _on_body_entered(body):
-	if body.name == 'player':
+	if body.name == 'player':			
 		body.damage()
 	queue_free()
 

@@ -51,6 +51,8 @@ shape = SubResource( 3 )
 
 [node name="right_paddle" parent="." index="3" instance=ExtResource( 3 )]
 
+position = Vector2( 0.237823, 0 )
+
 [node name="left_paddle" parent="." index="4" instance=ExtResource( 3 )]
 
 position = Vector2( -93.9416, 1.18913 )
