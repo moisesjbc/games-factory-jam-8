@@ -90,8 +90,6 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="player" parent="." index="0" instance=ExtResource( 1 )]
 
-enemy_recharge = 30.0
-
 [node name="enemies_spawn" type="Position2D" parent="." index="1"]
 
 script = ExtResource( 2 )
