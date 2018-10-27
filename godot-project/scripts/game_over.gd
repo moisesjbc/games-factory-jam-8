@@ -1,6 +1,7 @@
 extends Panel
 
 func show():
+	$game_over_sound.play()
 	get_tree().paused = true
 	visible = true
 
