@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://sprites/enemy.png" type="Texture" id=2]
 [ext_resource path="res://scripts/paddle.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -33,15 +38,23 @@ max_horizontal_speed = 150.0
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.572383, 0.456597 )
-scale = Vector2( 3.18681, 3.18681 )
+position = Vector2( -0.727812, 25.7748 )
+scale = Vector2( 3.64986, 3.81832 )
 shape = SubResource( 1 )
 
-[node name="right_paddle" type="Area2D" parent="." index="2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 1.02412, -27.3308 )
+scale = Vector2( 1.49364, 3.10237 )
+shape = SubResource( 3 )
+
+[node name="right_paddle" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -77,7 +90,7 @@ position = Vector2( 45.2503, 0.963682 )
 scale = Vector2( 0.893688, 3.15443 )
 shape = SubResource( 2 )
 
-[node name="left_paddle" type="Area2D" parent="." index="3"]
+[node name="left_paddle" type="Area2D" parent="." index="4"]
 
 position = Vector2( 0.263519, 0 )
 input_pickable = true
