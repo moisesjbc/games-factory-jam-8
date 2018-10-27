@@ -47,4 +47,9 @@ func damage():
 		emit_signal("died")
 
 func recharge_energy():
+	# Play hit sound
+	if not $recharge_sound.playing:
+		$recharge_sound.stop()
+	$recharge_sound.play()
+	
 	$energy_bar.value += enemy_recharge
