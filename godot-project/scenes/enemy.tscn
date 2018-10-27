@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
 [ext_resource path="res://sprites/enemy.png" type="Texture" id=2]
-[ext_resource path="res://scripts/paddle.gd" type="Script" id=3]
+[ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -10,11 +10,6 @@ custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -54,83 +49,12 @@ position = Vector2( 1.02412, -27.3308 )
 scale = Vector2( 1.49364, 3.10237 )
 shape = SubResource( 3 )
 
-[node name="right_paddle" type="Area2D" parent="." index="3"]
+[node name="right_paddle" parent="." index="3" instance=ExtResource( 3 )]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+[node name="left_paddle" parent="." index="4" instance=ExtResource( 3 )]
 
-[node name="ColorRect" type="ColorRect" parent="right_paddle" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 37.0
-margin_top = -31.0
-margin_right = 54.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="right_paddle" index="1"]
-
-position = Vector2( 45.2503, 0.963682 )
-scale = Vector2( 0.893688, 3.15443 )
-shape = SubResource( 2 )
-
-[node name="left_paddle" type="Area2D" parent="." index="4"]
-
-position = Vector2( 0.263519, 0 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="ColorRect" type="ColorRect" parent="left_paddle" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -55.0
-margin_top = -31.0
-margin_right = -38.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="left_paddle" index="1"]
-
-position = Vector2( -47.2452, 1.2272 )
-scale = Vector2( 0.893688, 3.15443 )
-shape = SubResource( 2 )
+position = Vector2( -93.9416, 1.18913 )
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-
-[connection signal="body_entered" from="right_paddle" to="right_paddle" method="_on_paddle_body_entered"]
-
-[connection signal="body_entered" from="left_paddle" to="left_paddle" method="_on_paddle_body_entered"]
 
 
