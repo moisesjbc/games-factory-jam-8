@@ -3,7 +3,7 @@
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/return_to_main_menu_button.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 
 size = 20
 use_mipmaps = false
@@ -11,7 +11,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 
 size = 20
 use_mipmaps = false
@@ -58,7 +58,7 @@ anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1002.0
-margin_bottom = 795.0
+margin_bottom = 754.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -83,7 +83,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.515625, 0, 1 )
 text = "Idea, graphics and programming"
 align = 1
@@ -107,7 +107,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0.507812, 0.055542, 1 )
 text = "Moisés J. Bonilla Caraballo (moisesjbc)"
 align = 1
@@ -131,7 +131,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.515625, 0, 1 )
 text = "Sounds"
 align = 1
@@ -155,7 +155,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0.507812, 0.055542, 1 )
 text = "All sounds were downloaded from freesound.org and belong to their respective authors
 
@@ -191,7 +191,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.515625, 0, 1 )
 text = "Software"
 align = 1
@@ -215,7 +215,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0.507812, 0.055542, 1 )
 text = "Godot Engine (https://godotengine.org/)
 Gimp (https://www.gimp.org/)
@@ -242,9 +242,9 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.515625, 0, 1 )
-text = "Sounds"
+text = "Fonts"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -266,7 +266,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0.507812, 0.055542, 1 )
 text = "Ubuntu-B.ttf (https://design.ubuntu.com/font/)"
 align = 1
@@ -290,7 +290,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.515625, 0, 1 )
 text = "Made for Games Factory Jam 8"
 align = 1

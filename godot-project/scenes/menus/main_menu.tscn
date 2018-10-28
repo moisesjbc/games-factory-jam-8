@@ -28,7 +28,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="background" type="ColorRect"]
+[node name="background" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -230,7 +230,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 202.0
+margin_left = 203.0
 margin_right = 450.0
 margin_bottom = 46.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -240,7 +240,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
-text = "ROBOPIRAT'"
+text = "PIRATINSUL'"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -280,6 +280,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 3 )
+stretch_mode = 0
 _sections_unfolded = [ "Focus", "Hint", "Margin", "Rect" ]
 
 [node name="made_for_label" type="Label" parent="." index="2"]
