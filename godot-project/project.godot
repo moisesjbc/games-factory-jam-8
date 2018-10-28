@@ -21,6 +21,7 @@ background="*res://scenes/background.tscn"
 [display]
 
 window/size/height=768
+window/size/resizable=false
 
 [rendering]
 
