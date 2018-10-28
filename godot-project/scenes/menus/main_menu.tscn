@@ -308,6 +308,8 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [connection signal="pressed" from="buttons/play_button" to="buttons" method="_on_play_button_pressed"]
 
+[connection signal="pressed" from="buttons/how_to_play_button" to="buttons" method="_on_how_to_play_button_pressed"]
+
 [connection signal="pressed" from="buttons/game_over_button" to="buttons" method="_on_game_over_button_pressed"]
 
 
