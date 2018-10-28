@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -86,6 +86,14 @@ _sections_unfolded = [ "Font", "Settings" ]
 [sub_resource type="DynamicFont" id=5]
 
 size = 50
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 8 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=12]
+
+size = 25
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 8 )
@@ -269,15 +277,14 @@ autostart = true
 
 pause_mode = 2
 visible = false
-modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -192.0
-margin_top = -118.0
-margin_right = 183.0
-margin_bottom = 117.0
+margin_left = -156.0
+margin_top = -72.0
+margin_right = 189.0
+margin_bottom = 127.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -293,8 +300,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 373.0
-margin_bottom = 235.0
+margin_left = 1.0
+margin_right = 344.0
+margin_bottom = 199.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -302,6 +310,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
+_sections_unfolded = [ "Visibility" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="game_over/CenterContainer" index="0"]
 
@@ -309,17 +318,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 38.0
-margin_top = 77.0
-margin_right = 335.0
-margin_bottom = 158.0
+margin_left = 23.0
+margin_top = 21.0
+margin_right = 320.0
+margin_bottom = 178.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 15
 alignment = 0
+_sections_unfolded = [ "custom_constants" ]
 
 [node name="game_over_label" type="Label" parent="game_over/CenterContainer/VBoxContainer" index="0"]
 
@@ -343,15 +354,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
 
-[node name="Button" type="Button" parent="game_over/CenterContainer/VBoxContainer" index="1"]
+[node name="restart_game_button" type="Button" parent="game_over/CenterContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 61.0
+margin_top = 72.0
 margin_right = 297.0
-margin_bottom = 81.0
+margin_bottom = 107.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -360,14 +371,42 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 12 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Resume"
+text = "Restart game"
 flat = false
 align = 1
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "Size Flags", "Visibility", "custom_fonts" ]
+
+[node name="return_to_main_menu_button" type="Button" parent="game_over/CenterContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 122.0
+margin_right = 297.0
+margin_bottom = 157.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 12 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Return to main menu"
+flat = false
+align = 1
+_sections_unfolded = [ "Size Flags", "Visibility", "custom_fonts" ]
 
 [node name="game_over_sound" type="AudioStreamPlayer" parent="game_over" index="1"]
 
@@ -586,7 +625,9 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="timeout" from="time_label/timer" to="time_label" method="_on_timer_timeout"]
 
-[connection signal="pressed" from="game_over/CenterContainer/VBoxContainer/Button" to="game_over" method="hide"]
+[connection signal="pressed" from="game_over/CenterContainer/VBoxContainer/restart_game_button" to="game_over" method="hide"]
+
+[connection signal="pressed" from="game_over/CenterContainer/VBoxContainer/return_to_main_menu_button" to="game_over" method="_on_return_to_main_menu_button_pressed"]
 
 [connection signal="pressed" from="pause_menu/MarginContainer/VBoxContainer/resume_button" to="pause_menu" method="_on_resume_button_pressed"]
 
