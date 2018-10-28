@@ -154,6 +154,7 @@ position = Vector2( 514.008, 673.108 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 enemy_scene = ExtResource( 3 )
+time_step = 0.1
 
 [node name="enemies_spawn_timer" type="Timer" parent="enemies_spawn" index="0"]
 
@@ -162,11 +163,19 @@ wait_time = 1.0
 one_shot = false
 autostart = true
 
+[node name="difficulty_increase_timer" type="Timer" parent="enemies_spawn" index="1"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = true
+
 [node name="clouds_spawn" type="Position2D" parent="." index="3"]
 
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 enemy_scene = ExtResource( 4 )
+time_step = 0.1
 
 [node name="clouds_spawn_timer" type="Timer" parent="clouds_spawn" index="0"]
 
@@ -431,6 +440,8 @@ _sections_unfolded = [ "Rect" ]
 [connection signal="hit" from="player" to="life_bar" method="update_hp"]
 
 [connection signal="timeout" from="enemies_spawn/enemies_spawn_timer" to="enemies_spawn" method="spawn_enemy"]
+
+[connection signal="timeout" from="enemies_spawn/difficulty_increase_timer" to="enemies_spawn" method="increase_difficulty"]
 
 [connection signal="timeout" from="clouds_spawn/clouds_spawn_timer" to="clouds_spawn" method="spawn_enemy"]
 
