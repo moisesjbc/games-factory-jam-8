@@ -38,6 +38,6 @@ function export_game {
 }
 
 export_game "Linux/X11" "piratinsul_linux" "piratinsul_linux"
-export_game "Windows Desktop" "piratinsul_windows" "piratinsul_windows"
+export_game "Windows Desktop" "piratinsul_windows" "piratinsul_windows.exe"
 export_game "HTML5" "piratinsul_html" "index.html" # itch.io expects an index.html in zip
 
