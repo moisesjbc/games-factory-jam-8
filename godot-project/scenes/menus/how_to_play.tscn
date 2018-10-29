@@ -38,7 +38,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -124,7 +124,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "The greatest island-robot-pirate Piratinsul' has just stole a big mountain of gold! 
+text = "The greatest island-robot-pirate Piratinsul' has just stolen a big mountain of gold! 
 
 Unfortunately, the police discovered him and now he is on the run. Help him!"
 percent_visible = 1.0
