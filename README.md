@@ -53,3 +53,17 @@ All sounds were downloaded from freesound.org and belong to their respective aut
 
 Ubuntu-B.ttf (https://design.ubuntu.com/font/)
 
+## Development images
+
+### Adding collisions to player
+
+![Piratinsul' - Adding collisions to player](img/dev/collision_shapes.png)
+
+### Adding sprites
+
+![Piratinsul ' - Adding sprites](img/dev/adding_sprites.png)
+
+### Crazy physics
+
+![Piratinsul ' - Crazy physics](img/dev/crazy_physics.png)
+
