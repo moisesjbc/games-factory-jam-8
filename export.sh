@@ -1,7 +1,5 @@
 #!/bin/bash
 
-GODOT_EXECUTABLE=/opt/godot-engine/Godot_v3.0.6-stable_x11.64
-
 EXPORT_DIRPATH=`pwd`/export
 ZIP_DIRPATH=`pwd`"/export/zip"
 
