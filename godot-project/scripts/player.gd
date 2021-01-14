@@ -5,7 +5,7 @@ extends RigidBody2D
 # var b = "textvar"
 
 export (int) var impulse = 500
-export (float) var movement_energy_cost = 0.5
+export (float) var movement_energy_cost = 1
 export (float) var enemy_recharge = 30.0
 export (int) var max_hp = 3
 
@@ -29,10 +29,10 @@ func _physics_process(delta):
 		direction = -1.0
 	elif Input.is_action_pressed("ui_right"):
 		direction = 1.0
-		
-	if direction != 0.0 and $energy_bar.value >= movement_energy_cost:
+	
+	if direction != 0.0 and $energy_bar.energy >= movement_energy_cost:
 		apply_impulse(offset, Vector2(direction * impulse * delta, 0.0))
-		$energy_bar.value -= movement_energy_cost
+		$energy_bar.energy -= movement_energy_cost
 
 
 func damage():
@@ -52,4 +52,4 @@ func recharge_energy():
 		$recharge_sound.stop()
 	$recharge_sound.play()
 	
-	$energy_bar.value += enemy_recharge
+	$energy_bar.energy += enemy_recharge
